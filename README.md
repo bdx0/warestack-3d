@@ -1,4 +1,4 @@
-# WareStack 3D — Logistics World v3
+# WareStack 3D — Logistics World v4
 
 **Live:** https://bdx0.github.io/warestack-3d/
 
@@ -10,10 +10,18 @@ A self-contained WebGL logistics-world simulation inspired by the WareTrack demo
 - Two open racking areas; docks, aisles, pallets and inventory staging.
 - Interconnected roads, security checkpoint, container yard, service/charging bay and control tower.
 - 6 trucks, 8 forklifts, animated routes, trees, light poles, marked lanes.
-- 30 named/selectable entities and a contextual panel (capacity, task, battery, ETA, delivery status).
+- 270 selectable world entities, including 240 independently identifiable storage bins with SKU, quantity, lot and capacity.
 - Clickable minimap, overview/region shortcuts, pause, time-speed, labels, search and fleet/inventory filters.
 - WebGL rendering with depth buffer, plus Canvas 2D fallback and built-in diagnostics.
-- Responsive layout, swipe to orbit, two-finger pan, pinch to zoom. No page scroll.
+- Responsive layout, swipe to orbit, two-finger pan, cursor-anchored wheel zoom, bounded pinch zoom and safe reset. No page scroll.
+
+### Warehouse Explorer
+
+Click **🏭 Vào kho** to focus WH-01, WH-03 or WH-06 and hide the roof for a cutaway look. Each room contains shelves and individually selectable locations (72 + 72 + 96 = **240**). Select a slot in the 3D view or bin list to inspect SKU, quantity, lot and shelf position. **Mái** switches automatic / hidden / visible. **⌂** restores the full-campus camera. These inventory values are simulated, not synchronized to a WMS.
+
+### Fixed zoom behavior
+
+All wheel, +/- and pinch paths use the same bounded camera range. Wheel zoom is anchored at the pointer; +/- zoom around the camera center. Two-finger pan no longer accumulates camera-origin errors. A visibility safeguard recenters when all world objects leave the visible frame. If rendering fails, open **Debug 3D** and copy the report.
 
 ## What *world model* means here
 
